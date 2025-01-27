@@ -1,0 +1,174 @@
+@import url("https://use.typekit.net/jmk3xov.css");
+
+:root {
+  --dark-bg: rgba(15, 15, 15, 0.95);
+  --light-bg: #ffffff;
+  --text-color: #ffffff;
+  --highlight-text: #000000;
+  --font-family-primary: brandon-grotesque, sans-serif;
+  --font-family-secondary: elevon, sans-serif;
+  --spacing: 22rem;
+  --max-width: 1200px;
+  --grid-gap: 2rem;
+  --font-size-large: 2.5rem;
+  --font-size-medium: 1.25rem;
+  --font-size-small: 1rem;
+  --line-height: 1.6;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  color: var(--text-color);
+  background-color: var(--dark-bg);
+  line-height: var(--line-height);
+}
+
+h1,
+h2,
+h3,
+blockquote {
+  font-family: var(--font-family-secondary);
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+blockquote p {
+  color: var(--highlight-text);
+  font-size: 3rem;
+  display: inline;
+  line-height: 1;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  max-width: var(--max-width);
+  gap: var(--grid-gap);
+}
+
+header {
+  background: var(--dark-bg);
+  grid-column: 2 / span 10;
+  font-size: var(--font-size-large);
+  padding: 2rem;
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+section {
+  grid-column: 2 / 12;
+  background: var(--dark-bg);
+  font-size: var(--font-size-medium);
+  line-height: var(--line-height);
+  padding: 1.5rem;
+  margin-bottom: var(--spacing);
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow */
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  grid-column: 2 / span 9;
+  margin-bottom: var(--spacing);
+}
+
+footer {
+  grid-column: 2 / span 12;
+  text-align: center;
+  font-size: var(--font-size-small);
+  margin-top: 3rem;
+  color: var(--highlight-text);
+}
+
+/* Reusable Classes */
+.left {
+  grid-column: 6 / 12;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Links */
+a {
+  color: var(--highlight-text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  header {
+    grid-column: 1 / span 1;
+    font-size: 2rem;
+  }
+
+  section {
+    grid-column: 1 / span 1;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  blockquote p {
+    font-size: 2rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  blockquote p {
+    font-size: 1.5rem;
+  }
+}
